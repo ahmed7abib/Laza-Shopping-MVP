@@ -104,4 +104,5 @@
     <string name="order">Order</string>
     <string name="cards">My Cards</string>
     <string name="logout">Logout</string>
+    <string name="splash">Splash</string>
 </resources>

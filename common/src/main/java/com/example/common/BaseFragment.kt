@@ -55,7 +55,7 @@ abstract class BaseFragment<BB : ViewBinding>(
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.errorMessage.observe(viewLifecycleOwner) {
-            view.showSnackBar(it)
+            view.showSnackBar(it.asString(requireContext()))
         }
 
         viewModel.isAuthError.observe(viewLifecycleOwner) {

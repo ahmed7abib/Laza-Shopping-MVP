@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.laza.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_identityTypeFragment"
+            app:destination="@id/identityTypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountCreationChooserFragment"
+        android:name="com.example.laza.accountCreationChooser.AccountCreationChooserFragment"
+        android:label="fragment_account_creation_chooser"
+        tools:layout="@layout/fragment_account_creation_chooser">
+        <action
+            android:id="@+id/action_accountCreationChooserFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_accountCreationChooserFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.laza.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_dashboard_nav_graph"
+            app:destination="@id/dashboard_nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/identityTypeFragment"
+        android:name="com.example.laza.identityType.IdentityTypeFragment"
+        android:label="IdentityTypeFragment"
+        tools:layout="@layout/fragment_identity_type">
+        <action
+            android:id="@+id/action_identityTypeFragment_to_accountCreationChooserFragment"
+            app:destination="@id/accountCreationChooserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.laza.signup.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_dashboard_nav_graph"
+            app:destination="@id/dashboard_nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.laza.forgotPassword.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_confirmPasswordFragment"
+            app:destination="@id/confirmPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmPasswordFragment"
+        android:name="com.example.laza.confirmPassword.ConfirmPasswordFragment"
+        android:label="fragment_confirm_password"
+        tools:layout="@layout/fragment_confirm_password" >
+        <action
+            android:id="@+id/action_confirmPasswordFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.example.laza.changePassword.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" />
+    <include app:graph="@navigation/dashboard_nav_graph" />
+</navigation>

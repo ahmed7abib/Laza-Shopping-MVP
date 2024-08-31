@@ -5,7 +5,7 @@ import com.example.common.remote.ErrorTypes
 
 open class BaseViewModel : ViewModel() {
 
-    private val _errorMessage: SingleMutableLiveData<String> = SingleMutableLiveData()
+    private val _errorMessage: SingleMutableLiveData<TextUI> = SingleMutableLiveData()
     val errorMessage get() = _errorMessage
     private val _isLoading: SingleMutableLiveData<Boolean> = SingleMutableLiveData()
     val isLoading get() = _isLoading
