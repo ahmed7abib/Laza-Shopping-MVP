@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="main_blue">#3D93F8</color>
+    <color name="main_grey">#8F959E</color>
+    <color name="address_grey_bg">#F5F6FA</color>
+    <color name="main_green">#34C358</color>
+    <color name="main_red">#EA4335</color>
+    <color name="sec_color">#FFEEE3</color>
+    <color name="_8f959e">#8F959E</color>
+    <color name="log_color">#FF5757</color>
+</resources>
