@@ -17,7 +17,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
 
     private fun onClick() {
         binding.signUpBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_signUpFragment_to_dashboard_nav_graph)
+            findNavController().navigate(R.id.action_signUpFragment_to_dashboad_graph)
         }
     }
 }

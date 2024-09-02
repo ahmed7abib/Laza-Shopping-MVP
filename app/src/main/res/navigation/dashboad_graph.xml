@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dashboard_nav_graph"
+    android:id="@+id/dashboad_graph"
     app:startDestination="@id/homeFragment">
 
     <fragment
@@ -10,5 +10,14 @@
         android:name="com.example.laza.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
-
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.laza.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/cartFragment"
+        tools:layout="@layout/fragment_cart"
+        android:name="com.example.laza.cart.CartFragment"
+        android:label="CartFragment" />
 </navigation>

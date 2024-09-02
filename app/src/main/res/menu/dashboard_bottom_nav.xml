@@ -14,11 +14,6 @@
     <item
         android:id="@+id/wishlistID"
         android:icon="@drawable/bag"
-        android:title="@string/wishlist" />
-
-    <item
-        android:id="@+id/paymentID"
-        android:icon="@drawable/wallet"
-        android:title="@string/payment" />
+        android:title="@string/cart" />
 
 </menu>
