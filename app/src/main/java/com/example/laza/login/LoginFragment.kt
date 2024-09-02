@@ -24,6 +24,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         binding.loginBTN.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_dashboard_nav_graph)
         }
+
+        binding.tvForgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
+        }
     }
 
     private fun init() {

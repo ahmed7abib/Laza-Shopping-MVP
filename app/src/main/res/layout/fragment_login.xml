@@ -42,7 +42,6 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="60dp"
-        android:background="@color/white"
         android:hint="@string/username"
         android:textColorHint="@color/main_grey"
         app:boxBackgroundColor="@color/white"
@@ -53,7 +52,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,7 +61,6 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="16dp"
-        android:background="@color/white"
         android:hint="@string/password"
         android:textColorHint="@color/main_grey"
         app:boxBackgroundColor="@color/white"
@@ -75,7 +72,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:inputType="textPassword"
             android:textColor="@color/black" />
 
