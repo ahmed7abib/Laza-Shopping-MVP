@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_accountCreationChooserFragment"
-            app:destination="@id/accountCreationChooserFragment" />
+            app:destination="@id/accountCreationChooserFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/accountCreationChooserFragment"
@@ -36,23 +38,27 @@
             app:destination="@id/forgotPasswordFragment" />
         <action
             android:id="@+id/action_loginFragment_to_dashboard_nav_graph"
-            app:destination="@id/dashboard_nav_graph" />
+            app:destination="@id/dashboard_nav_graph"
+            app:popUpTo="@id/accountCreationChooserFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.laza.signup.SignUpFragment"
         android:label="SignUpFragment"
-        tools:layout="@layout/fragment_sign_up" >
+        tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_signUpFragment_to_dashboard_nav_graph"
-            app:destination="@id/dashboard_nav_graph" />
+            app:destination="@id/dashboard_nav_graph"
+            app:popUpTo="@id/accountCreationChooserFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.laza.forgotPassword.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment"
-        tools:layout="@layout/fragment_forgot_password" >
+        tools:layout="@layout/fragment_forgot_password">
         <action
             android:id="@+id/action_forgotPasswordFragment_to_confirmPasswordFragment"
             app:destination="@id/confirmPasswordFragment" />
@@ -61,7 +67,7 @@
         android:id="@+id/confirmPasswordFragment"
         android:name="com.example.laza.confirmPassword.ConfirmPasswordFragment"
         android:label="fragment_confirm_password"
-        tools:layout="@layout/fragment_confirm_password" >
+        tools:layout="@layout/fragment_confirm_password">
         <action
             android:id="@+id/action_confirmPasswordFragment_to_changePasswordFragment"
             app:destination="@id/changePasswordFragment" />
@@ -70,10 +76,12 @@
         android:id="@+id/changePasswordFragment"
         android:name="com.example.laza.changePassword.ChangePasswordFragment"
         android:label="fragment_change_password"
-        tools:layout="@layout/fragment_change_password" >
+        tools:layout="@layout/fragment_change_password">
         <action
             android:id="@+id/action_changePasswordFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <include app:graph="@navigation/dashboard_nav_graph" />
 </navigation>
