@@ -3,6 +3,7 @@ package com.example.laza.splash
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.common.BaseFragment
 import com.example.laza.R
 import com.example.laza.databinding.FragmentSplashBinding
@@ -16,7 +17,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
 
         lifecycleScope.launch {
             delay(2000)
-            navigateTo(R.id.action_splashFragment_to_identityTypeFragment)
+            findNavController().navigate(R.id.action_splashFragment_to_accountCreationChooserFragment)
         }
     }
 }

@@ -6,46 +6,33 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.view.View
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.common.BaseFragment
+import com.example.laza.R
 import com.example.laza.databinding.FragmentLoginBinding
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
-    private lateinit var viewModel: LoginViewModel
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        showText()
-        onClickListener()
-        setUpViewModel()
-        observer()
+
+        init()
+        onClick()
     }
 
-    private fun observer() {
-        viewModel.success.observe(viewLifecycleOwner){
-//            navigateTo()
-        }
-    }
-
-    private fun setUpViewModel() {
-        viewModel = ViewModelProvider(requireActivity())[LoginViewModel::class.java]
-    }
-
-    private fun onClickListener() {
+    private fun onClick() {
         binding.loginBTN.setOnClickListener {
-            val username = binding.etUserName.editText?.text.toString()
-            val password = binding.etPassword.editText?.text.toString()
-            viewModel.login(username, password)
+            findNavController().navigate(R.id.action_loginFragment_to_dashboard_nav_graph)
         }
     }
 
-    private fun showText() {
-        val string =
-            "By connecting your account confirm that you agree with our Terms and Conditions"
-        val text =
-            SpannableString(string)
+    private fun init() {
+        val string = getString(R.string.by_connecting_your_account_confirm)
+
+        val text = SpannableString(string)
+
         val foregroundColor = ForegroundColorSpan(Color.BLACK)
+
         text.setSpan(
             foregroundColor,
             string.lastIndexOf("Terms"),
@@ -55,6 +42,4 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
         binding.tvTermsAndCondition.text = text
     }
-
-
 }

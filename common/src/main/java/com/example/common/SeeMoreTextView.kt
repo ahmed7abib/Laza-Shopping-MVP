@@ -14,18 +14,16 @@ class SeeMoreTextView(context: Context, attrs: AttributeSet?) : AppCompatTextVie
 
     private val seeMoreText = "See More"
     private val seeLessText = "See Less"
+
     private var maxLinesToShow = 2
     private var isExpanded = false
 
     init {
-        // Make the "See More" text clickable
         movementMethod = LinkMovementMethod.getInstance()
         highlightColor = Color.TRANSPARENT
 
-        // Set the initial state of the TextView
         updateText()
 
-        // Handle clicks on "See More" and "See Less"
         setOnClickListener {
             isExpanded = !isExpanded
             updateText()

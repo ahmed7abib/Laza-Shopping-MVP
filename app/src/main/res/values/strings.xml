@@ -105,4 +105,20 @@
     <string name="cards">My Cards</string>
     <string name="logout">Logout</string>
     <string name="splash">Splash</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="already_have_an_account">Already have an account? </string>
+    <string name="sign_in">Sign in</string>
+    <string name="google">Google</string>
+    <string name="twitter">Twitter</string>
+    <string name="facebook">Facebook</string>
+    <string name="let_s_get_started">Let’s Get Started</string>
+    <string name="welcome">Welcome</string>
+    <string name="please_enter_your_data_to_continue">Please enter your data to continue</string>
+    <string name="username">Username</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="remember_me">Remember me</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="by_connecting_your_account_confirm">By connecting your account confirm that you agree with our Terms and Conditions</string>
 </resources>

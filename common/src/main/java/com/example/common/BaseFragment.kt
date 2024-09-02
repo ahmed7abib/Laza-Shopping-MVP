@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
@@ -35,9 +36,18 @@ abstract class BaseFragment<BB : ViewBinding>(
             container,
             false
         )
-        addProgressBar(container)
 
-        return _binding?.root
+        val frameLayout = FrameLayout(requireContext()).apply {
+            layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            addView(_binding?.root)
+        }
+
+        addProgressBar(frameLayout)
+
+        return frameLayout
     }
 
     private fun addProgressBar(viewGroup: ViewGroup?) {
@@ -46,9 +56,8 @@ abstract class BaseFragment<BB : ViewBinding>(
             ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
-
+        progressBar.visibility = View.GONE
         viewGroup?.addView(progressBar)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -87,8 +96,7 @@ abstract class BaseFragment<BB : ViewBinding>(
         _binding = null
     }
 
-    fun navigateTo(navigationAction: Int){
+    fun navigateTo(navigationAction: Int) {
 
     }
-
 }

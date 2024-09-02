@@ -15,6 +15,7 @@ open class BaseViewModel : ViewModel() {
 
     fun handleError(errorTypes: ErrorTypes) {
         _isLoading.value=false
+
         when (errorTypes) {
             is ErrorTypes.AuthenticationError -> _isAuthError.value = true
 

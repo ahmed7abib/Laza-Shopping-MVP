@@ -181,7 +181,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/productSizesRV" />
 
-            <com.example.laza.core.SeeMoreTextView
+            <com.example.common.SeeMoreTextView
                 android:id="@+id/descContentTVId"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

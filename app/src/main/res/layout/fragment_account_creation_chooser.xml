@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Let’s Get Started"
+        android:text="@string/let_s_get_started"
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintTop_toBottomOf="@id/button_back" />
@@ -50,13 +50,13 @@
             android:layout_gravity="center"
             android:layout_weight="2"
             android:background="@null"
-            android:drawableStart="@drawable/ic_facebook"
-            android:drawableLeft="@drawable/ic_facebook"
             android:drawablePadding="10dp"
-            android:text="Facebook"
+            android:text="@string/facebook"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:drawableLeftCompat="@drawable/ic_facebook"
+            app:drawableStartCompat="@drawable/ic_facebook" />
 
 
     </LinearLayout>
@@ -84,13 +84,13 @@
             android:layout_gravity="center"
             android:layout_weight="2"
             android:background="@null"
-            android:drawableStart="@drawable/ic_twitter"
-            android:drawableLeft="@drawable/ic_twitter"
             android:drawablePadding="10dp"
-            android:text="Twitter"
+            android:text="@string/twitter"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:drawableLeftCompat="@drawable/ic_twitter"
+            app:drawableStartCompat="@drawable/ic_twitter" />
 
 
     </LinearLayout>
@@ -119,26 +119,23 @@
             android:layout_gravity="center"
             android:layout_weight="2"
             android:background="@null"
-            android:drawableStart="@drawable/ic_google"
-            android:drawableLeft="@drawable/ic_google"
             android:drawablePadding="10dp"
-            android:text="Google"
+            android:text="@string/google"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp" />
-
-
+            android:textSize="18sp"
+            app:drawableLeftCompat="@drawable/ic_google"
+            app:drawableStartCompat="@drawable/ic_google" />
     </LinearLayout>
 
-
     <TextView
-        android:id="@+id/confirm_order_BTN"
+        android:id="@+id/signUpBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/main_blue"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Create an Account"
+        android:text="@string/create_an_account"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -150,21 +147,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="Already have an account? "
+        android:text="@string/already_have_an_account"
         android:textColor="@color/main_grey"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/confirm_order_BTN"
+        app:layout_constraintBottom_toTopOf="@id/signUpBtn"
         app:layout_constraintStart_toStartOf="@id/vr_guide_15" />
 
     <TextView
         android:id="@+id/login_BTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign in"
+        android:layout_marginStart="6dp"
+        android:text="@string/sign_in"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_already_have_account"
-        app:layout_constraintBottom_toTopOf="@id/confirm_order_BTN"
+        app:layout_constraintBottom_toTopOf="@id/signUpBtn"
         app:layout_constraintStart_toEndOf="@id/tv_already_have_account" />
 
     <androidx.constraintlayout.widget.Guideline
