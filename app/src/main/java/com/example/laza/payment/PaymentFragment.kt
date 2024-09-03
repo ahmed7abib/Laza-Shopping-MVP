@@ -18,6 +18,6 @@ class PaymentFragment : BaseFragment<FragmentPaymentBinding>(FragmentPaymentBind
     }
 
     private fun init() {
-        sharedViewModel.hideUnNecessaryView.value = false
+        sharedViewModel.hideUnNecessaryView(false)
     }
 }

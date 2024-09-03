@@ -18,6 +18,6 @@ class CartFragment : BaseFragment<FragmentCartBinding>(FragmentCartBinding::infl
     }
 
     private fun init() {
-        sharedViewModel.hideUnNecessaryView.value = false
+        sharedViewModel.hideUnNecessaryView(false)
     }
 }

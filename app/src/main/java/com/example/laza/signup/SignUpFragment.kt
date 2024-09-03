@@ -21,7 +21,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
     }
 
     private fun init() {
-        sharedViewModel.hideUnNecessaryView.value = true
+        sharedViewModel.hideUnNecessaryView(true)
     }
 
     private fun onClick() {

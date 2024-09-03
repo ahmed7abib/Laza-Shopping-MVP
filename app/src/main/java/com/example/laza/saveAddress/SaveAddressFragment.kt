@@ -8,7 +8,8 @@ import com.example.common.BaseFragment
 import com.example.laza.LazaSharedViewModel
 import com.example.laza.databinding.FragmentSaveAddressBinding
 
-class SaveAddressFragment : BaseFragment<FragmentSaveAddressBinding>(FragmentSaveAddressBinding::inflate){
+class SaveAddressFragment :
+    BaseFragment<FragmentSaveAddressBinding>(FragmentSaveAddressBinding::inflate) {
 
     private val sharedViewModel: LazaSharedViewModel by activityViewModels()
 
@@ -19,6 +20,6 @@ class SaveAddressFragment : BaseFragment<FragmentSaveAddressBinding>(FragmentSav
     }
 
     private fun init() {
-        sharedViewModel.hideUnNecessaryView.value = false
+        sharedViewModel.hideUnNecessaryView(false)
     }
 }

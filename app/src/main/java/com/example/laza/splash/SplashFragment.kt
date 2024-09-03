@@ -24,7 +24,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
 
     private fun init() {
 
-        sharedViewModel.hideUnNecessaryView.value = true
+        sharedViewModel.hideUnNecessaryView(true)
 
         lifecycleScope.launch {
             delay(2000)

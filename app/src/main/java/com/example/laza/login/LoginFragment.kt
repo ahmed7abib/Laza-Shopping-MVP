@@ -35,7 +35,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     }
 
     private fun init() {
-        sharedViewModel.hideUnNecessaryView.value = true
+        sharedViewModel.hideUnNecessaryView(true)
 
         val string = getString(R.string.by_connecting_your_account_confirm)
 

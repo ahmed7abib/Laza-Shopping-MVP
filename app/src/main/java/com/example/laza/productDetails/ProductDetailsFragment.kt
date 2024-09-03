@@ -20,7 +20,7 @@ class ProductDetailsFragment :
     }
 
     private fun init() {
-        sharedViewModel.hideUnNecessaryView.value = false
+        sharedViewModel.hideUnNecessaryView(false)
     }
 
 }

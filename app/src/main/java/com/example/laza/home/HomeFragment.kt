@@ -20,6 +20,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     private fun init() {
-        sharedViewModel.hideUnNecessaryView.value = false
+        sharedViewModel.hideUnNecessaryView(false)
     }
 }

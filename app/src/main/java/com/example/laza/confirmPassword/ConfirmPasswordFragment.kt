@@ -26,7 +26,7 @@ class ConfirmPasswordFragment :
     }
 
     private fun init() {
-        sharedViewModel.hideUnNecessaryView.value = true
+        sharedViewModel.hideUnNecessaryView(true)
     }
 
     private fun observer() {

@@ -19,6 +19,6 @@ class WishListFragment : BaseFragment<FragmentWishListBinding>(FragmentWishListB
     }
 
     private fun init() {
-        sharedViewModel.hideUnNecessaryView.value = true
+        sharedViewModel.hideUnNecessaryView(true)
     }
 }

@@ -19,6 +19,6 @@ class AddNewCardFragment :
     }
 
     private fun init() {
-        sharedViewModel.hideUnNecessaryView.value = false
+        sharedViewModel.hideUnNecessaryView(false)
     }
 }

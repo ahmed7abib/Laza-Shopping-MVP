@@ -22,7 +22,7 @@ class AccountCreationChooserFragment :
     }
 
     private fun init() {
-        sharedViewModel.hideUnNecessaryView.value = true
+        sharedViewModel.hideUnNecessaryView(true)
     }
 
     private fun onClick() {
