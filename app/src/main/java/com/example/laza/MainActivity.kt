@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity() {
             if (hide == true) {
                 binding.toolbar.visibility = View.GONE
                 binding.bottomNav.visibility = View.GONE
+            } else {
+                binding.toolbar.visibility = View.VISIBLE
+                binding.bottomNav.visibility = View.VISIBLE
             }
         }
     }
