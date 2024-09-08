@@ -130,4 +130,7 @@
     <string name="please_write_your_new_password">Please write your new password</string>
     <string name="new_password">New Password</string>
     <string name="cart">Cart</string>
+    <string name="ahmed_habib">Ahmed Habib</string>
+    <string name="account_verified">Account Verified</string>
+    <string name="account_information">Account Information</string>
 </resources>
