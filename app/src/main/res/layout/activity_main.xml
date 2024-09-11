@@ -11,44 +11,40 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <androidx.appcompat.widget.Toolbar
+        <RelativeLayout
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="16dp"
+            android:layout_marginEnd="16dp"
+            android:padding="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp">
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/sideMenuId"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/oval_gray"
+                android:src="@drawable/burger_menu" />
 
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/oval_gray"
-                    android:src="@drawable/burger_menu" />
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/cartId"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/oval_gray"
+                android:src="@drawable/bag"
+                android:tint="@color/black" />
 
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/oval_gray"
-                    android:src="@drawable/bag"
-                    android:tint="@color/black" />
-
-            </RelativeLayout>
-
-        </androidx.appcompat.widget.Toolbar>
+        </RelativeLayout>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/mainNavGraph"
             android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             app:defaultNavHost="true"
             app:layout_constraintBottom_toTopOf="@+id/bottomNav"
@@ -56,7 +52,6 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintVertical_bias="1.0"
             app:navGraph="@navigation/nav_graph" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -66,7 +61,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/dashboard_bottom_nav" />
+            app:menu="@menu/bottom_nav_menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -76,7 +71,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/menu_main">
+        app:menu="@menu/drawer_menu">
 
         <LinearLayout
             android:layout_width="match_parent"
