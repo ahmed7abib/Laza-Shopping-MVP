@@ -21,4 +21,12 @@ fun Context.setTypeFace(view: List<TextView>, font: String) {
     }
 }
 
+fun View.gone() {
+    this.visibility = View.GONE
+}
+
+fun View.visible() {
+    this.visibility = View.VISIBLE
+}
+
 fun getRandom(from: Int, to: Int) = (Math.random() * (to - from + 1) + from).toInt()

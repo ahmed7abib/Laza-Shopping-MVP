@@ -37,8 +37,8 @@
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_dashboad_graph"
-            app:destination="@id/homeFragment"
+            android:id="@+id/action_loginFragment_to_home"
+            app:destination="@id/home_nav"
             app:popUpTo="@id/accountCreationChooserFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -49,8 +49,8 @@
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
         <action
-            android:id="@+id/action_signUpFragment_to_dashboad_graph"
-            app:destination="@id/homeFragment"
+            android:id="@+id/action_signUpFragment_to_home"
+            app:destination="@id/home_nav"
             app:popUpTo="@id/accountCreationChooserFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -72,6 +72,7 @@
             android:id="@+id/action_confirmPasswordFragment_to_changePasswordFragment"
             app:destination="@id/changePasswordFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/changePasswordFragment"
         android:name="com.example.laza.changePassword.ChangePasswordFragment"
@@ -84,27 +85,7 @@
             app:popUpToInclusive="true" />
     </fragment>
 
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.laza.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/favoriteFragment"
-        android:name="com.example.laza.favorite.FavoriteFragment"
-        android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
-
-    <fragment
-        android:id="@+id/cartFragment"
-        android:name="com.example.laza.cart.CartFragment"
-        android:label="CartFragment"
-        tools:layout="@layout/fragment_cart" />
-
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.laza.settings.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+    <include
+        android:id="@+id/home_nav"
+        app:graph="@navigation/nav_home" />
 </navigation>

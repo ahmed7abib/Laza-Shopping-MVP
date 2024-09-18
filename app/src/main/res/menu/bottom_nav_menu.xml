@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/homeID"
-        android:actionLayout="@layout/fragment_home"
-        android:icon="@drawable/home"
-        android:title="@string/home" />
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/home"
+            android:title="@string/home" />
 
-    <item
-        android:id="@+id/favoriteID"
-        android:actionLayout="@layout/fragment_favorite"
-        android:icon="@drawable/favorite"
-        android:title="@string/favorite" />
+        <item
+            android:id="@+id/favoriteFragment"
+            android:icon="@drawable/favorite"
+            android:title="@string/favorite" />
 
-    <item
-        android:id="@+id/wishlistID"
-        android:actionLayout="@layout/fragment_wish_list"
-        android:icon="@drawable/bag"
-        android:title="@string/cart" />
+        <item
+            android:id="@+id/wishListFragment"
+            android:icon="@drawable/bag"
+            android:title="@string/cart" />
+    </group>
 
 </menu>

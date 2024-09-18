@@ -4,10 +4,12 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.example.common.gone
+import com.example.common.visible
 import com.example.laza.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -33,11 +35,32 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpBottomNav() {
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.mainNavGraph) as NavHostFragment
-        navController = navHostFragment.navController
-
+        navController = findNavController(R.id.mainNavGraph)
         binding.bottomNav.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.splashFragment -> hideUnNecessaryView()
+                R.id.loginFragment -> hideUnNecessaryView()
+                R.id.forgotPasswordFragment -> hideUnNecessaryView()
+                R.id.signUpFragment -> hideUnNecessaryView()
+                R.id.accountCreationChooserFragment -> hideUnNecessaryView()
+                R.id.confirmPasswordFragment -> hideUnNecessaryView()
+                R.id.changePasswordFragment -> hideUnNecessaryView()
+
+                else -> showUnNecessaryView()
+            }
+        }
+    }
+
+    private fun hideUnNecessaryView() {
+        binding.toolbar.gone()
+        binding.bottomNav.gone()
+    }
+
+    private fun showUnNecessaryView() {
+        binding.toolbar.visible()
+        binding.bottomNav.visible()
     }
 
     private fun setupBurgerMenuButton() {

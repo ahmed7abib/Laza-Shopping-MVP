@@ -41,7 +41,7 @@
 
         </RelativeLayout>
 
-        <androidx.fragment.app.FragmentContainerView
+        <fragment
             android:id="@+id/mainNavGraph"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
