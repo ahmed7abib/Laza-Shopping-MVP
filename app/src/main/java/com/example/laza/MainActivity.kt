@@ -1,6 +1,7 @@
 package com.example.laza
 
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         onClick()
         setUpBottomNav()
+        handleBackStack()
         setupBurgerMenuButton()
     }
 
@@ -75,6 +77,18 @@ class MainActivity : AppCompatActivity() {
             navController,
             binding.drawerLayout
         ) || super.onSupportNavigateUp()
+    }
+
+    private fun handleBackStack() {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (navController.currentDestination?.id == R.id.homeFragment) {
+                    finish()
+                } else {
+                    navController.navigateUp()
+                }
+            }
+        })
     }
 }
 
