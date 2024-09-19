@@ -133,4 +133,20 @@
     <string name="ahmed_habib">Ahmed Habib</string>
     <string name="account_verified">Account Verified</string>
     <string name="account_information">Account Information</string>
+    <string name="men_s_printed_pullover_hoodie">Men\'s Printed Pullover Hoodie</string>
+    <string name="brand">brand</string>
+    <string name="master_card_classic">Master card classic</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="checkout">Checkout</string>
+    <string name="chhatak_sunamgonj_12_8ab">Chhatak, Sunamgonj 12/8AB</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="_3456">**** 3456</string>
+    <string name="order_info">Order Info</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="_110">$110</string>
+    <string name="shipping_cost">Shipping Cost</string>
+    <string name="_10">$10</string>
+    <string name="total">Total</string>
+    <string name="_120">$120</string>
+    <string name="sylhet">Sylhet</string>
 </resources>

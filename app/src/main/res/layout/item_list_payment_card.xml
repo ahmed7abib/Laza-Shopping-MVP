@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="300dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="8dp"
+    android:layout_margin="8dp"
     android:layout_marginBottom="16dp">
 
     <ImageView
@@ -33,16 +32,17 @@
         tools:text="Ahmed Habib" />
 
     <ImageView
+        android:id="@+id/cardTypeId"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginEnd="24dp"
         android:contentDescription="@string/todo"
-        android:src="@drawable/visa_icon"
         app:layout_constraintBottom_toBottomOf="@+id/holderNameId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toEndOf="@+id/holderNameId"
-        app:layout_constraintTop_toTopOf="@+id/holderNameId" />
+        app:layout_constraintTop_toTopOf="@+id/holderNameId"
+        tools:src="@drawable/visa_icon" />
 
     <TextView
         android:id="@+id/visaClassicTvId"

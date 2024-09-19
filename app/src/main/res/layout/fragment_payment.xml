@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".payment.PaymentFragment">
+    tools:context=".payment.ui.PaymentFragment">
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/backIcon"
@@ -30,13 +30,16 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cardsRV"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/addNewCardBtn"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toEndOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@id/backIcon"
+        app:layout_constraintVertical_bias="0"
         tools:itemCount="2"
         tools:listitem="@layout/item_list_payment_card" />
 
@@ -44,12 +47,14 @@
         android:id="@+id/addNewCardBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/round_corner_gray_stroke_blue"
         android:gravity="center"
         android:padding="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toEndOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/cardsRV">
+        app:layout_constraintVertical_bias="1">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -70,37 +75,6 @@
             android:textSize="14sp" />
 
     </LinearLayout>
-
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/saveCardBtn"
-        app:layout_constraintEnd_toStartOf="@id/guideline3"
-        app:layout_constraintStart_toEndOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@id/addNewCardBtn"
-        app:layout_constraintVertical_bias="0">
-
-        <include
-            layout="@layout/payment_card_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </ScrollView>
-
-    <TextView
-        android:id="@+id/saveCardBtn"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/main_blue"
-        android:gravity="center|top"
-        android:paddingTop="18dp"
-        android:text="@string/save_card"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

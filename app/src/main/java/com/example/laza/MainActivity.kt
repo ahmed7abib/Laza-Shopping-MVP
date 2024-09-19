@@ -24,21 +24,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        init()
         onClick()
-        setUpBottomNav()
         handleBackStack()
-        setupBurgerMenuButton()
     }
 
-    private fun onClick() {
-        binding.sideMenuId.setOnClickListener {
-            binding.drawerLayout.openDrawer(GravityCompat.START)
-        }
-    }
-
-    private fun setUpBottomNav() {
+    private fun init() {
         navController = findNavController(R.id.mainNavGraph)
         binding.bottomNav.setupWithNavController(navController)
+
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.settingsFragment),
+            binding.drawerLayout
+        )
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
@@ -49,10 +47,31 @@ class MainActivity : AppCompatActivity() {
                 R.id.accountCreationChooserFragment -> hideUnNecessaryView()
                 R.id.confirmPasswordFragment -> hideUnNecessaryView()
                 R.id.changePasswordFragment -> hideUnNecessaryView()
+                R.id.productDetailsFragment -> hideUnNecessaryView()
+                R.id.reviewsFragment -> hideUnNecessaryView()
+                R.id.addReviewFragment -> hideUnNecessaryView()
+                R.id.addNewCardFragment -> hideUnNecessaryView()
+                R.id.cartFragment -> hideUnNecessaryView()
+                R.id.paymentFragment -> hideOnlyToolbar()
+                R.id.wishListFragment -> hideOnlyToolbar()
 
                 else -> showUnNecessaryView()
             }
         }
+    }
+
+    private fun onClick() {
+        binding.sideMenuId.setOnClickListener {
+            binding.drawerLayout.openDrawer(GravityCompat.START)
+        }
+
+        binding.cartId.setOnClickListener {
+            navController.navigate(R.id.cartFragment)
+        }
+    }
+
+    private fun hideOnlyToolbar() {
+        binding.toolbar.gone()
     }
 
     private fun hideUnNecessaryView() {
@@ -63,13 +82,6 @@ class MainActivity : AppCompatActivity() {
     private fun showUnNecessaryView() {
         binding.toolbar.visible()
         binding.bottomNav.visible()
-    }
-
-    private fun setupBurgerMenuButton() {
-        appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.settingsFragment),
-            binding.drawerLayout
-        )
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -91,4 +103,3 @@ class MainActivity : AppCompatActivity() {
         })
     }
 }
-

@@ -9,240 +9,283 @@
         android:id="@+id/button_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/back_bg"
         android:src="@drawable/back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/tv_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Cart"
+        android:text="@string/cart"
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
-        app:layout_constraintStart_toEndOf="@id/vr_guideline_35"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/button_back" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginVertical="16dp"
-        app:layout_constraintBottom_toTopOf="@id/hr_guideline_57"
-        app:layout_constraintEnd_toEndOf="@id/vr_guideline_end"
-        app:layout_constraintStart_toStartOf="@id/vr_guideline_start"
+        android:id="@+id/ordersRV"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_cart"
         tools:itemCount="4"
         tools:listitem="@layout/product_item" />
 
-    <TextView
-        android:id="@+id/tv_delivery_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="8dp"
-        android:text="Delivery Address"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        app:layout_constraintStart_toEndOf="@id/vr_guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/hr_guideline_57" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/checkout_BTN"
+        app:layout_constraintTop_toBottomOf="@+id/ordersRV"
+        app:layout_constraintVertical_bias="0">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/iv_location"
-        android:layout_width="75dp"
-        android:layout_height="65dp"
-        android:background="@drawable/location_img"
-        android:src="@drawable/ic_location"
-        app:layout_constraintStart_toStartOf="@id/vr_guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/tv_delivery_address" />
+            <TextView
+                android:id="@+id/tv_delivery_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/delivery_address"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/iv_chnge_delivery_address"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_arrow_right"
-        app:layout_constraintEnd_toEndOf="@id/vr_guideline_end"
-        app:layout_constraintTop_toBottomOf="@id/hr_guideline_57" />
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/iv_chnge_delivery_address"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_delivery_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@+id/tv_delivery_address"
+                app:layout_constraintTop_toTopOf="@+id/tv_delivery_address" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/iv_used_address_before"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_circle_done"
-        app:layout_constraintEnd_toEndOf="@id/vr_guideline_end"
-        app:layout_constraintTop_toBottomOf="@id/iv_chnge_delivery_address" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/deliveryAddressContainerId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_delivery_address">
 
-    <TextView
-        android:id="@+id/tv_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="8dp"
-        android:text="Chhatak, Sunamgonj 12/8AB"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@id/iv_location"
-        app:layout_constraintTop_toBottomOf="@id/tv_delivery_address" />
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/iv_location"
+                    android:layout_width="75dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/location_img"
+                    android:src="@drawable/ic_location"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/iv_used_address_before"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_circle_done"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_city"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Sylhet"
-        android:textColor="@color/main_grey"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/tv_address"
-        app:layout_constraintTop_toBottomOf="@id/tv_address" />
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:text="@string/chhatak_sunamgonj_12_8ab"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@id/iv_location"
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/sylhet"
+                    android:textColor="@color/main_grey"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@id/tv_address"
+                    app:layout_constraintTop_toBottomOf="@id/tv_address" />
 
-    <TextView
-        android:id="@+id/tv_payment_method"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="8dp"
-        android:text="Payment Method"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        app:layout_constraintStart_toEndOf="@id/vr_guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/hr_guideline_66" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <TextView
+                android:id="@+id/tv_payment_method"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/payment_method"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deliveryAddressContainerId" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/iv_method"
-        android:layout_width="75dp"
-        android:layout_height="65dp"
-        android:background="@drawable/grey_bg"
-        android:src="@drawable/visa_icon"
-        app:layout_constraintStart_toStartOf="@id/vr_guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/tv_payment_method" />
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/iv_chnge_method"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_payment_method"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_payment_method" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/iv_chnge_method"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_arrow_right"
-        app:layout_constraintEnd_toEndOf="@id/vr_guideline_end"
-        app:layout_constraintTop_toBottomOf="@id/hr_guideline_66" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/paymentContainerId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_payment_method">
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/iv_used_method_before"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_circle_done"
-        app:layout_constraintEnd_toEndOf="@id/vr_guideline_end"
-        app:layout_constraintTop_toBottomOf="@id/iv_chnge_method" />
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/iv_method"
+                    android:layout_width="75dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/grey_bg"
+                    android:src="@drawable/visa_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_method_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="8dp"
-        android:text="Visa Classic"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@id/iv_method"
-        app:layout_constraintTop_toBottomOf="@id/tv_payment_method" />
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/iv_used_method_before"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_circle_done"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:id="@+id/tv_method_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:text="@string/visa_classic"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@id/iv_method"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_method_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="**** 7690"
-        android:textColor="@color/main_grey"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/tv_method_type"
-        app:layout_constraintTop_toBottomOf="@id/tv_method_type" />
+                <TextView
+                    android:id="@+id/tv_method_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/_3456"
+                    android:textColor="@color/main_grey"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@id/tv_method_type"
+                    app:layout_constraintTop_toBottomOf="@id/tv_method_type" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/tv_order_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="8dp"
-        android:text="Order Info"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@id/vr_guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/hr_guideline_75" />
+            <TextView
+                android:id="@+id/tv_order_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/order_info"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/paymentContainerId" />
 
+            <TextView
+                android:id="@+id/tv_subtotal_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/subtotal"
+                android:textColor="@color/main_grey"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_subtotal_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_subtotal_value" />
 
-    <TextView
-        android:id="@+id/tv_subtotal_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Subtotal"
-        android:textColor="@color/main_grey"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@id/vr_guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/tv_order_info" />
+            <TextView
+                android:id="@+id/tv_subtotal_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/_110"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_order_info" />
 
-    <TextView
-        android:id="@+id/tv_subtotal_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$110"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_subtotal_label"
-        app:layout_constraintEnd_toEndOf="@id/vr_guideline_end" />
+            <TextView
+                android:id="@+id/tv_shipping_cost_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/shipping_cost"
+                android:textColor="@color/main_grey"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_shipping_cost_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_shipping_cost_value" />
 
-    <TextView
-        android:id="@+id/tv_shipping_cost_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="8dp"
-        android:text="Shipping Cost"
-        android:textColor="@color/main_grey"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@id/vr_guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/tv_subtotal_label" />
+            <TextView
+                android:id="@+id/tv_shipping_cost_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_10"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_subtotal_value" />
 
-    <TextView
-        android:id="@+id/tv_shipping_cost_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$10"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_shipping_cost_label"
-        app:layout_constraintEnd_toEndOf="@id/vr_guideline_end" />
+            <TextView
+                android:id="@+id/tv_total_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:text="@string/total"
+                android:textColor="@color/main_grey"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_total_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_total_value" />
 
-    <TextView
-        android:id="@+id/tv_total_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="8dp"
-        android:text="Total"
-        android:textColor="@color/main_grey"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@id/vr_guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/tv_shipping_cost_label" />
+            <TextView
+                android:id="@+id/tv_total_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/_120"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_shipping_cost_value" />
 
-    <TextView
-        android:id="@+id/tv_total_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$120"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_total_label"
-        app:layout_constraintEnd_toEndOf="@id/vr_guideline_end" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.core.widget.NestedScrollView>
 
     <TextView
         android:id="@+id/checkout_BTN"
@@ -251,53 +294,11 @@
         android:background="@color/main_blue"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Checkout"
+        android:text="@string/checkout"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vr_guideline_35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.38" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/hr_guideline_75"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/hr_guideline_66"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.63" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/hr_guideline_57"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.50" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vr_guideline_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="16dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vr_guideline_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

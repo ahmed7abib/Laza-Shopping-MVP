@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".productDetails.ProductDetailsFragment">
+    tools:context=".productDetails.ui.ProductDetailsFragment">
 
     <ImageView
         android:id="@+id/full_imageId"
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:scaleType="fitXY"
-        android:src="@drawable/test_img_1"
+        android:src="@drawable/new_arrival_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,43 +21,48 @@
         android:layout_height="50dp"
         android:background="@drawable/half_oval_gray"
         app:layout_constraintBottom_toBottomOf="@+id/full_imageId"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toEndOf="@+id/guideline">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
+            android:id="@+id/brandImgId"
             android:layout_width="45dp"
             android:layout_height="25dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/nike" />
+            android:contentDescription="@string/brand"
+            android:src="@drawable/brand_nike" />
 
     </RelativeLayout>
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_margin="16dp"
         android:background="@drawable/oval_white"
         android:src="@drawable/back"
-        app:layout_constraintStart_toEndOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/guideline2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
         android:background="@drawable/oval_white"
         android:src="@drawable/bag"
         android:tint="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/guideline2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollId"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="16dp"
         android:paddingBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/addToChartBtn"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/full_imageId">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,14 +75,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="?android:textAppearanceMedium"
+                android:text="@string/men_s_printed_pullover_hoodie"
                 android:textColor="@color/main_grey"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Men's Printed Pullover Hoodie" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/clothTypeId"
+                android:id="@+id/productName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -92,10 +97,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="@+id/clothTypeId"
+                app:layout_constraintBottom_toBottomOf="@+id/productName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1"
-                app:layout_constraintStart_toEndOf="@+id/clothTypeId"
+                app:layout_constraintStart_toEndOf="@+id/productName"
                 app:layout_constraintTop_toTopOf="@+id/productDescId">
 
                 <TextView
@@ -120,18 +125,17 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/productShapesRV"
-                android:layout_width="0dp"
+                android:id="@+id/product_cuts_rv"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/clothTypeId"
+                app:layout_constraintTop_toBottomOf="@+id/productName"
                 tools:itemCount="4"
-                tools:listitem="@layout/item_list_product_shapes" />
+                tools:listitem="@layout/item_list_product_cuts" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -142,7 +146,7 @@
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/productShapesRV" />
+                app:layout_constraintTop_toBottomOf="@+id/product_cuts_rv" />
 
             <TextView
                 android:id="@+id/sizeGuideTVId"
@@ -153,17 +157,16 @@
                 android:textColor="@color/main_blue"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/productShapesRV" />
+                app:layout_constraintTop_toBottomOf="@+id/product_cuts_rv" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/productSizesRV"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sizeGuideTVId"
                 tools:itemCount="5"
@@ -220,11 +223,12 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/reviewsRV"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/viewAllReviewsTVId"
                 tools:itemCount="1"
@@ -282,27 +286,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.06" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.03" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.94" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

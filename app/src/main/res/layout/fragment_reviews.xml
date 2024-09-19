@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".reviews.ReviewsFragment">
+    tools:context=".reviews.ui.ReviewsFragment">
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/backIcon"
@@ -79,6 +79,7 @@
         app:layout_constraintTop_toTopOf="@+id/ratingValueTVID" />
 
     <TextView
+        android:id="@+id/addReviewId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/round_corner_blue"
@@ -94,10 +95,13 @@
         app:layout_constraintTop_toTopOf="@+id/reviewsCountTVID" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/revRV"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toEndOf="@+id/guideline"

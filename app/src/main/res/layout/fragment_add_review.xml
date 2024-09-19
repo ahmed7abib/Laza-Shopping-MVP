@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".reviews.AddReviewFragment">
+    tools:context=".reviews.ui.AddReviewFragment">
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/backIcon"
@@ -120,21 +120,20 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/starId" />
 
-    <com.google.android.material.slider.RangeSlider
+    <SeekBar
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:stepSize="0.5"
         android:valueFrom="0.0"
         android:valueTo="5.0"
-        app:haloColor="@color/main_blue"
         app:layout_constraintBottom_toBottomOf="@+id/zeroId"
         app:layout_constraintEnd_toStartOf="@+id/fiveId"
         app:layout_constraintStart_toEndOf="@+id/zeroId"
         app:layout_constraintTop_toTopOf="@+id/zeroId"
-        app:thumbColor="@color/main_blue"
         app:thumbRadius="10dp"
-        app:thumbStrokeColor="@color/main_blue" />
+        app:thumbStrokeColor="@color/main_blue"
+        app:thumbTint="@color/main_blue" />
 
     <TextView
         android:id="@+id/submitReviewBtn"

@@ -8,14 +8,14 @@
             android:title="@string/home" />
 
         <item
-            android:id="@+id/favoriteFragment"
+            android:id="@+id/wishListFragment"
             android:icon="@drawable/favorite"
-            android:title="@string/favorite" />
+            android:title="@string/wishlist" />
 
         <item
-            android:id="@+id/wishListFragment"
-            android:icon="@drawable/bag"
-            android:title="@string/cart" />
+            android:id="@+id/paymentFragment"
+            android:icon="@drawable/wallet"
+            android:title="@string/cards" />
     </group>
 
 </menu>

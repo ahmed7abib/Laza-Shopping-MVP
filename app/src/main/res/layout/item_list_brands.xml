@@ -7,7 +7,6 @@
     android:background="@drawable/round_corner_gray"
     android:padding="12dp">
 
-
     <RelativeLayout
         android:id="@+id/imageRelative"
         android:layout_width="45dp"
@@ -19,7 +18,7 @@
             android:layout_width="25dp"
             android:layout_height="17dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/nike" />
+            android:src="@drawable/brand_nike" />
 
     </RelativeLayout>
 

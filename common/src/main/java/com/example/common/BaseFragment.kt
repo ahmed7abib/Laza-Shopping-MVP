@@ -8,6 +8,7 @@ import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.ahmed.a.habib.common.R
 import com.google.android.material.snackbar.Snackbar
@@ -97,6 +98,6 @@ abstract class BaseFragment<BB : ViewBinding>(
     }
 
     fun navigateTo(navigationAction: Int) {
-
+        findNavController().navigate(navigationAction)
     }
 }
