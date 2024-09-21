@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.addReviewFragment -> hideUnNecessaryView()
                 R.id.addNewCardFragment -> hideUnNecessaryView()
                 R.id.cartFragment -> hideUnNecessaryView()
+                R.id.orderConfirmedFragment -> hideUnNecessaryView()
                 R.id.paymentFragment -> hideOnlyToolbar()
                 R.id.wishListFragment -> hideOnlyToolbar()
 

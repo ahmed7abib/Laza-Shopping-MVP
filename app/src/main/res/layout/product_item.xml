@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
@@ -22,19 +22,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <TextView
             android:id="@+id/tv_item_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:maxLines="2"
-            android:text="Men's Tie-Dye T-Shirt Nike Sportswear"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_item_img"
-            app:layout_constraintTop_toTopOf="@id/iv_item_img" />
-
+            app:layout_constraintTop_toTopOf="@id/iv_item_img"
+            tools:text="Men's Tie-Dye T-Shirt Nike Sportswear" />
 
         <TextView
             android:id="@+id/tv_item_price"
@@ -42,12 +40,12 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginVertical="16dp"
-            android:text="45$"
             android:textColor="@color/main_grey"
             android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@id/vr_guideline_85"
             app:layout_constraintStart_toEndOf="@id/iv_item_img"
-            app:layout_constraintTop_toBottomOf="@id/tv_item_title" />
+            app:layout_constraintTop_toBottomOf="@id/tv_item_title"
+            tools:text="45$" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/iv_down_arrow"
@@ -62,13 +60,13 @@
             android:id="@+id/tv_counter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
             android:layout_marginVertical="8dp"
+            android:gravity="center"
             android:textColor="@color/black"
             android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@id/iv_down_arrow"
-            app:layout_constraintTop_toBottomOf="@id/tv_item_price" />
+            app:layout_constraintTop_toBottomOf="@id/tv_item_price"
+            tools:text="1" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/ic_up_arrow"
@@ -84,11 +82,11 @@
             android:id="@+id/ic_delete"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@android:color/transparent"
             android:layout_margin="16dp"
+            android:background="@android:color/transparent"
             android:src="@drawable/ic_delete"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
         <androidx.constraintlayout.widget.Guideline
