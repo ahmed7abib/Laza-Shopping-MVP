@@ -24,6 +24,10 @@ class AccountCreationChooserFragment :
         binding.signUpBtn.setOnClickListener {
             findNavController().navigate(R.id.action_accountCreationChooserFragment_to_signUpFragment)
         }
+
+        binding.buttonBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
 }

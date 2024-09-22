@@ -62,5 +62,9 @@ class ConfirmPasswordFragment :
         binding.confirmCodeBTN.setOnClickListener {
             findNavController().navigate(R.id.action_confirmPasswordFragment_to_changePasswordFragment)
         }
+
+        binding.buttonBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 }

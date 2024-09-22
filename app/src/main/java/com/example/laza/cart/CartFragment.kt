@@ -2,6 +2,7 @@ package com.example.laza.cart
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.example.common.BaseFragment
 import com.example.laza.R
 import com.example.laza.databinding.FragmentCartBinding
@@ -21,6 +22,10 @@ class CartFragment : BaseFragment<FragmentCartBinding>(FragmentCartBinding::infl
     private fun onClick() {
         binding.checkoutBTN.setOnClickListener {
             navigateTo(R.id.action_cartFragment_to_orderConfirmedFragment)
+        }
+
+        binding.buttonBack.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 
@@ -45,14 +50,6 @@ class CartFragment : BaseFragment<FragmentCartBinding>(FragmentCartBinding::infl
             "Fleece",
             "99$",
             productCount = 1
-        ),
-        Product(
-            3,
-            R.drawable.new_arrival_1,
-            "NIKE Sports Wear Club",
-            "Fleece",
-            "99$",
-            productCount = 3
         )
     )
 }

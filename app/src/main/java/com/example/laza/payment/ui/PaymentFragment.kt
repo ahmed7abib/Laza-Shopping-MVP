@@ -2,6 +2,7 @@ package com.example.laza.payment.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.example.common.BaseFragment
 import com.example.laza.R
 import com.example.laza.databinding.FragmentPaymentBinding
@@ -23,6 +24,10 @@ class PaymentFragment : BaseFragment<FragmentPaymentBinding>(FragmentPaymentBind
     private fun onClick() {
         binding.addNewCardBtn.setOnClickListener {
             navigateTo(R.id.action_paymentFragment_to_addNewCardFragment)
+        }
+
+        binding.backIcon.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 

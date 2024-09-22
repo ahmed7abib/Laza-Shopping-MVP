@@ -21,5 +21,9 @@ class ChangePasswordFragment :
         binding.confirmPassBtn.setOnClickListener {
             findNavController().navigate(R.id.action_changePasswordFragment_to_loginFragment)
         }
+
+        binding.buttonBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 }

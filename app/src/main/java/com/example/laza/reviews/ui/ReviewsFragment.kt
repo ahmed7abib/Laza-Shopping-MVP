@@ -2,6 +2,7 @@ package com.example.laza.reviews.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.example.common.BaseFragment
 import com.example.laza.R
 import com.example.laza.databinding.FragmentReviewsBinding
@@ -37,6 +38,10 @@ class ReviewsFragment : BaseFragment<FragmentReviewsBinding>(FragmentReviewsBind
     private fun onClick() {
         binding.addReviewId.setOnClickListener {
             navigateTo(R.id.action_reviewsFragment_to_addReviewFragment)
+        }
+
+        binding.backIcon.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 

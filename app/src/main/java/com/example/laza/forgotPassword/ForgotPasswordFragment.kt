@@ -21,5 +21,9 @@ class ForgotPasswordFragment :
         binding.confirmEmailBtn.setOnClickListener {
             findNavController().navigate(R.id.action_forgotPasswordFragment_to_confirmPasswordFragment)
         }
+
+        binding.buttonBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 }

@@ -19,5 +19,9 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
         binding.signUpBtn.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_home)
         }
+
+        binding.buttonBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 }

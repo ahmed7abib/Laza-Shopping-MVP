@@ -3,6 +3,7 @@ package com.example.laza.whishlist
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.example.common.BaseFragment
 import com.example.laza.R
 import com.example.laza.databinding.FragmentWishListBinding
@@ -24,6 +25,10 @@ class WishListFragment : BaseFragment<FragmentWishListBinding>(FragmentWishListB
     private fun onClick() {
         wishListAdapter.listener = { _, _, _ ->
             navigateTo(R.id.action_wishListFragment_to_productDetailsFragment)
+        }
+
+        binding.backIcon.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 

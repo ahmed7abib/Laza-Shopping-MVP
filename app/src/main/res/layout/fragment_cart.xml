@@ -55,7 +55,7 @@
                 android:id="@+id/tv_delivery_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/delivery_address"
                 android:textColor="@color/black"
                 android:textSize="22sp"
@@ -109,9 +109,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginVertical="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:text="@string/chhatak_sunamgonj_12_8ab"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_used_address_before"
                     app:layout_constraintStart_toEndOf="@id/iv_location"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -122,7 +125,7 @@
                     android:layout_marginTop="6dp"
                     android:text="@string/sylhet"
                     android:textColor="@color/main_grey"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@id/tv_address"
                     app:layout_constraintTop_toBottomOf="@id/tv_address" />
 
@@ -188,7 +191,7 @@
                     android:layout_marginVertical="8dp"
                     android:text="@string/visa_classic"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@id/iv_method"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -199,7 +202,7 @@
                     android:layout_marginTop="6dp"
                     android:text="@string/_3456"
                     android:textColor="@color/main_grey"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@id/tv_method_type"
                     app:layout_constraintTop_toBottomOf="@id/tv_method_type" />
 
@@ -212,7 +215,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/order_info"
                 android:textColor="@color/black"
-                android:textSize="28sp"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/paymentContainerId" />
 
@@ -234,7 +237,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/_110"
                 android:textColor="@color/black"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_order_info" />
 
@@ -256,7 +259,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/_10"
                 android:textColor="@color/black"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_subtotal_value" />
 
@@ -279,7 +282,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/_120"
                 android:textColor="@color/black"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_shipping_cost_value" />
 
