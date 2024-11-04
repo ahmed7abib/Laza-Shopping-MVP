@@ -4,7 +4,6 @@ package com.example.laza.whishlist
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
-import com.example.common.BaseFragment
 import com.example.laza.R
 import com.example.laza.databinding.FragmentWishListBinding
 import com.example.laza.home.NewArrivalRVAdapter

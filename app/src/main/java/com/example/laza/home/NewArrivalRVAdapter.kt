@@ -3,7 +3,6 @@ package com.example.laza.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import com.example.common.BaseRVAdapter
 import com.example.laza.databinding.ItemListNewArrivalBinding
 import com.example.laza.home.models.Product
 

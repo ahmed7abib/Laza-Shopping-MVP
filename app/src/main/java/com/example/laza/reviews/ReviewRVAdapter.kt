@@ -3,7 +3,6 @@ package com.example.laza.reviews
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import com.example.common.BaseRVAdapter
 import com.example.laza.databinding.ItemListReviewsBinding
 import com.example.laza.reviews.models.Review
 

@@ -1,21 +1,23 @@
-package com.example.common
+package com.example.common.ui
 
 import androidx.lifecycle.ViewModel
+import com.example.common.SingleMutableLiveData
+import com.example.common.remote.ErrorMessage
 import com.example.common.remote.ErrorTypes
 
 open class BaseViewModel : ViewModel() {
 
-    private val _errorMessage: SingleMutableLiveData<TextUI> = SingleMutableLiveData()
+    private val _errorMessage: SingleMutableLiveData<ErrorMessage> = SingleMutableLiveData()
     val errorMessage get() = _errorMessage
-    private val _isLoading: SingleMutableLiveData<Boolean> = SingleMutableLiveData()
+
+    protected val _isLoading: SingleMutableLiveData<Boolean> = SingleMutableLiveData()
     val isLoading get() = _isLoading
 
     private val _isAuthError: SingleMutableLiveData<Boolean> = SingleMutableLiveData()
     val isAuthError get() = _isAuthError
 
     fun handleError(errorTypes: ErrorTypes) {
-        _isLoading.value=false
-
+        _isLoading.value = false
         when (errorTypes) {
             is ErrorTypes.AuthenticationError -> _isAuthError.value = true
 

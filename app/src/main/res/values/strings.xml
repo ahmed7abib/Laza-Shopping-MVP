@@ -152,4 +152,9 @@
     <string name="confirm_order">Confirm Order</string>
     <string name="order_confirmed">Order Confirmed!</string>
     <string name="your_order_has_been_confirmed_we_will_send_you_confirmation_email_shortly">Your order has been confirmed, we will send you confirmation email shortly.</string>
+    <string name="empty_username">User name is required!</string>
+    <string name="empty_password">Password is required!</string>
+    <string name="username_and_password_empty">User name and password are required!</string>
+    <string name="email_empty">Email is required!</string>
+    <string name="username_and_password_and_email_empty">User name and email and password are reqired!</string>
 </resources>

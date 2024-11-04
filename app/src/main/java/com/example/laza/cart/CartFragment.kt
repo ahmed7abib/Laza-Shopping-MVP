@@ -3,7 +3,6 @@ package com.example.laza.cart
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
-import com.example.common.BaseFragment
 import com.example.laza.R
 import com.example.laza.databinding.FragmentCartBinding
 import com.example.laza.home.models.Product

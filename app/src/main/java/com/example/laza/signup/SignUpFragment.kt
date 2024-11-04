@@ -3,7 +3,6 @@ package com.example.laza.signup
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
-import com.example.common.BaseFragment
 import com.example.laza.R
 import com.example.laza.databinding.FragmentSignUpBinding
 

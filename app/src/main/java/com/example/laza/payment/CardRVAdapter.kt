@@ -3,7 +3,6 @@ package com.example.laza.payment
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import com.example.common.BaseRVAdapter
 import com.example.laza.R
 import com.example.laza.databinding.ItemListPaymentCardBinding
 import com.example.laza.payment.models.CARD_TYPE

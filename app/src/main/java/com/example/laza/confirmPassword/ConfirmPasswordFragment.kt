@@ -6,7 +6,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import androidx.navigation.fragment.findNavController
-import com.example.common.BaseFragment
 import com.example.laza.R
 import com.example.laza.databinding.FragmentConfirmPasswordBinding
 

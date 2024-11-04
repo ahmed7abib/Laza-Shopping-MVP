@@ -3,7 +3,6 @@ package com.example.laza.home.ui
 
 import android.os.Bundle
 import android.view.View
-import com.example.common.BaseFragment
 import com.example.laza.R
 import com.example.laza.databinding.FragmentHomeBinding
 import com.example.laza.home.BrandRVAdapter

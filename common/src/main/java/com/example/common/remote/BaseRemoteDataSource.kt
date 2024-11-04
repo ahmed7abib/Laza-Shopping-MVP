@@ -1,16 +1,13 @@
 package com.example.common.remote
 
-import com.example.common.Resource
-import com.example.common.TextUI
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import org.json.JSONObject
 import retrofit2.Response
 
 open class BaseRemoteDataSource {
-
     fun <T : Any> safeApiCall(
-        call: suspend () -> Response<T>
+        call: suspend () -> Response<T>,
     ): Flow<Resource<T>> = flow {
         emit(safeApiResult(call))
     }
@@ -20,8 +17,8 @@ open class BaseRemoteDataSource {
 
         try {
             response = call.invoke()
-        } catch (ex: Exception) {
-            ex.printStackTrace()
+        } catch (e: Exception) {
+            e.printStackTrace()
             return getResultError(response)
         }
 
@@ -32,9 +29,8 @@ open class BaseRemoteDataSource {
         return getResultError(response)
     }
 
-    private fun <T> getResultError(response: Response<T>?): Resource.Error {
+    private fun <T : Any> getResultError(response: Response<T>?): Resource<T> {
         return when (response?.code()) {
-
             401 -> {
                 Resource.Error(ErrorTypes.AuthenticationError())
             }
@@ -49,23 +45,28 @@ open class BaseRemoteDataSource {
 
                 Resource.Error(
                     ErrorTypes.NetworkError(
-                        TextUI.DynamicString(message)
+                        ErrorMessage.DynamicString(message)
                     )
                 )
             }
 
             500 -> {
                 Resource.Error(
-                    ErrorTypes.NetworkError(TextUI.DynamicString("Opps, unknown error happened, please try again later"))
+                    ErrorTypes.NetworkError(ErrorMessage.DynamicString("Opps, unknown error happened, please try again later"))
                 )
             }
 
             else -> {
-                Resource.Error(
-                    ErrorTypes.GeneralError(
-                        TextUI.DynamicString(response?.errorBody()?.string().orEmpty())
+                val message = response?.errorBody()?.string().orEmpty()
+                if (message.isEmpty()) {
+                    Resource.Error(
+                        ErrorTypes.GeneralError(
+                            ErrorMessage.DynamicString("Unknown error, please check your internet and try again.")
+                        )
                     )
-                )
+                } else {
+                    Resource.Error(ErrorTypes.GeneralError(ErrorMessage.DynamicString(message)))
+                }
             }
         }
     }
