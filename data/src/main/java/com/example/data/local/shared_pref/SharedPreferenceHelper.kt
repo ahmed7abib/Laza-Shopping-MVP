@@ -3,6 +3,7 @@ package com.example.data.local.shared_pref
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.data.local.shared_pref.PreferenceKeys.PREFS_NAME
+import com.example.data.local.shared_pref.PreferenceKeys.REMEMBER_ME_KEY
 import com.example.data.local.shared_pref.PreferenceKeys.TOKEN_KEY
 import com.example.data.local.shared_pref.PreferenceKeys.USER_KEY
 import com.example.domain.models.dto.UserDto
@@ -33,6 +34,14 @@ object SharedPreferenceHelper {
 
     fun getToken(): String? {
         return preferences.getString(TOKEN_KEY, null)
+    }
+
+    fun setRememberMe(rememberMe: Boolean) {
+        preferences.edit().putBoolean(REMEMBER_ME_KEY, rememberMe).apply()
+    }
+
+    fun isRememberMe(): Boolean {
+        return preferences.getBoolean(REMEMBER_ME_KEY, false)
     }
 
     fun clear() {

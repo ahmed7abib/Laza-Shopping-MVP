@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.example.laza.cart.CartFragment"
+        android:name="com.example.laza.features.cart.CartFragment"
         android:label="CartFragment"
         tools:layout="@layout/fragment_cart" >
         <action

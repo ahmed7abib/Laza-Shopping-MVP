@@ -15,10 +15,13 @@
             app:destination="@id/accountCreationChooserFragment"
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_home_nav"
+            app:destination="@id/home_nav" />
     </fragment>
     <fragment
         android:id="@+id/accountCreationChooserFragment"
-        android:name="com.example.laza.accountCreationChooser.AccountCreationChooserFragment"
+        android:name="com.example.laza.features.accountCreationChooser.AccountCreationChooserFragment"
         android:label="fragment_account_creation_chooser"
         tools:layout="@layout/fragment_account_creation_chooser">
         <action
@@ -65,7 +68,7 @@
     </fragment>
     <fragment
         android:id="@+id/confirmPasswordFragment"
-        android:name="com.example.laza.confirmPassword.ConfirmPasswordFragment"
+        android:name="com.example.laza.features.confirmPassword.ConfirmPasswordFragment"
         android:label="fragment_confirm_password"
         tools:layout="@layout/fragment_confirm_password">
         <action
@@ -75,7 +78,7 @@
 
     <fragment
         android:id="@+id/changePasswordFragment"
-        android:name="com.example.laza.changePassword.ChangePasswordFragment"
+        android:name="com.example.laza.features.changePassword.ChangePasswordFragment"
         android:label="fragment_change_password"
         tools:layout="@layout/fragment_change_password">
         <action

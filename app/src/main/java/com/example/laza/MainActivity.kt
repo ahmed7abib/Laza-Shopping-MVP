@@ -12,7 +12,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.common.gone
 import com.example.common.visible
 import com.example.laza.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
