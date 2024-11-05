@@ -47,14 +47,14 @@ object NetworkModule {
             readTimeout(15, TimeUnit.SECONDS)
             addInterceptor(interceptor)
             addInterceptor(internetInterceptor)
-            addInterceptor { chain ->
-                val request: Request =
-                    chain.request()
-                        .newBuilder()
-                        .addHeader("Authorization", SharedPreferenceHelper.getToken().orEmpty())
-                        .build()
-                chain.proceed(request)
-            }
+            //            addInterceptor { chain ->
+            //                val request: Request =
+            //                    chain.request()
+            //                        .newBuilder()
+            //                        .addHeader("Authorization", SharedPreferenceHelper.getToken().orEmpty())
+            //                        .build()
+            //                chain.proceed(request)
+            //            }
         }.build()
     }
 

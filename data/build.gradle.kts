@@ -22,11 +22,11 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "BASE_URL", "\"http://localhost:8080/laza/api/v1/\"")
+            buildConfigField("String", "BASE_URL", "\"http://192.168.198.208:8080/laza/api/v1/\"")
         }
 
         release {
-            buildConfigField("String", "BASE_URL", "\"http://localhost:8080/laza/api/v1/\"")
+            buildConfigField("String", "BASE_URL", "\"http://192.168.198.208:8080/laza/api/v1/\"")
 
             isMinifyEnabled = false
             proguardFiles(

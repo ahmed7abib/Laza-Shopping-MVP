@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.laza.home.ui.HomeFragment"
+        android:name="com.example.laza.features.home.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -27,13 +27,13 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.laza.settings.SettingsFragment"
+        android:name="com.example.laza.features.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/wishListFragment"
-        android:name="com.example.laza.whishlist.WishListFragment"
+        android:name="com.example.laza.features.whishlist.WishListFragment"
         android:label="fragment_wish_list"
         tools:layout="@layout/fragment_wish_list">
         <action
@@ -43,7 +43,7 @@
 
     <fragment
         android:id="@+id/productDetailsFragment"
-        android:name="com.example.laza.productDetails.ui.ProductDetailsFragment"
+        android:name="com.example.laza.features.productDetails.ui.ProductDetailsFragment"
         android:label="fragment_product_details"
         tools:layout="@layout/fragment_product_details">
         <action
@@ -58,7 +58,7 @@
 
     <fragment
         android:id="@+id/reviewsFragment"
-        android:name="com.example.laza.reviews.ui.ReviewsFragment"
+        android:name="com.example.laza.features.reviews.ui.ReviewsFragment"
         android:label="fragment_reviews"
         tools:layout="@layout/fragment_reviews">
         <action
@@ -68,7 +68,7 @@
 
     <fragment
         android:id="@+id/addReviewFragment"
-        android:name="com.example.laza.reviews.ui.AddReviewFragment"
+        android:name="com.example.laza.features.reviews.ui.AddReviewFragment"
         android:label="fragment_add_review"
         tools:layout="@layout/fragment_add_review">
         <action
@@ -79,7 +79,7 @@
     </fragment>
     <fragment
         android:id="@+id/paymentFragment"
-        android:name="com.example.laza.payment.ui.PaymentFragment"
+        android:name="com.example.laza.features.payment.ui.PaymentFragment"
         android:label="fragment_payment"
         tools:layout="@layout/fragment_payment">
         <action
@@ -88,7 +88,7 @@
     </fragment>
     <fragment
         android:id="@+id/addNewCardFragment"
-        android:name="com.example.laza.payment.ui.AddNewCardFragment"
+        android:name="com.example.laza.features.payment.ui.AddNewCardFragment"
         android:label="fragment_add_new_card"
         tools:layout="@layout/fragment_add_new_card">
         <action
@@ -97,7 +97,7 @@
     </fragment>
     <fragment
         android:id="@+id/orderConfirmedFragment"
-        android:name="com.example.laza.orderConfirmed.OrderConfirmedFragment"
+        android:name="com.example.laza.features.orderConfirmed.OrderConfirmedFragment"
         android:label="OrderConfirmedFragment"
         tools:layout="@layout/fragment_order_confirmed" >
         <action

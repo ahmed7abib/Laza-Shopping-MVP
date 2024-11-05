@@ -8,7 +8,7 @@ data class AuthResponse(
     val status: Status,
     @SerializedName("token")
     val token: String,
-    @SerializedName("token")
+    @SerializedName("userDto")
     val user: User
 )
 

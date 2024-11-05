@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.laza.splash.SplashFragment"
+        android:name="com.example.laza.features.splash.SplashFragment"
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.laza.login.LoginFragment"
+        android:name="com.example.laza.features.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -48,7 +48,7 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.laza.signup.SignUpFragment"
+        android:name="com.example.laza.features.signup.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
         <action
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.laza.forgotPassword.ForgotPasswordFragment"
+        android:name="com.example.laza.features.forgotPassword.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment"
         tools:layout="@layout/fragment_forgot_password">
         <action
