@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.DiffUtil
 import com.example.common.BaseRVAdapter
 import com.example.laza.R
 import com.example.laza.databinding.ItemListPaymentCardBinding
-import com.example.laza.payment.models.CARD_TYPE
-import com.example.laza.payment.models.Card
+import com.example.laza.features.payment.models.CARD_TYPE
+import com.example.laza.features.payment.models.Card
 
 class CardRVAdapter : BaseRVAdapter<Card, ItemListPaymentCardBinding>(CardCallback()) {
 

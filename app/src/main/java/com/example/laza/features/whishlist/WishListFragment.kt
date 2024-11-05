@@ -8,7 +8,6 @@ import com.example.common.ui.BaseFragment
 import com.example.common.ui.BaseViewModel
 import com.example.laza.R
 import com.example.laza.databinding.FragmentWishListBinding
-import com.example.laza.home.NewArrivalRVAdapter
 import com.example.laza.home.models.Product
 import dagger.hilt.android.AndroidEntryPoint
 
