@@ -7,7 +7,7 @@ import com.example.common.ui.BaseFragment
 import com.example.common.ui.BaseViewModel
 import com.example.laza.R
 import com.example.laza.databinding.FragmentCartBinding
-import com.example.laza.home.models.Product
+import com.example.laza.features.home.models.Product
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

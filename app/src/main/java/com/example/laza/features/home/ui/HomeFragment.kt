@@ -7,7 +7,6 @@ import com.example.common.ui.BaseFragment
 import com.example.common.ui.BaseViewModel
 import com.example.laza.R
 import com.example.laza.databinding.FragmentHomeBinding
-import com.example.laza.home.BrandRVAdapter
 import com.example.laza.home.NewArrivalRVAdapter
 import com.example.laza.home.models.Brand
 import com.example.laza.home.models.Product

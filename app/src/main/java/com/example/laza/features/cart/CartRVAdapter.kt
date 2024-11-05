@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import com.example.common.BaseRVAdapter
 import com.example.laza.databinding.ProductItemBinding
-import com.example.laza.home.models.Product
+import com.example.laza.features.home.models.Product
 
 class CartRVAdapter : BaseRVAdapter<Product, ProductItemBinding>(CartCallback()) {
 
