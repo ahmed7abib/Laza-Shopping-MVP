@@ -1,4 +1,4 @@
-package com.example.laza.features.login
+package com.example.laza.features.auth.login
 
 import android.graphics.Color
 import android.os.Bundle

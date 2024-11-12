@@ -29,4 +29,8 @@ fun View.visible() {
     this.visibility = View.VISIBLE
 }
 
+fun String.isValidEmail(): Boolean {
+    return this.isNotEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
+}
+
 fun getRandom(from: Int, to: Int) = (Math.random() * (to - from + 1) + from).toInt()

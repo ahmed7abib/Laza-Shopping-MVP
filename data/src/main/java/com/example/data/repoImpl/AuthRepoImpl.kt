@@ -9,6 +9,7 @@ import com.example.data.remote.api.API
 import com.example.data.remote.models.requests.RegisterRequest
 import com.example.domain.models.holders.RegisterDataHolder
 import com.example.domain.repos.AuthRepo
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class AuthRepoImpl(private val api: API) : AuthRepo, BaseRemoteDataSource() {
@@ -57,6 +58,75 @@ class AuthRepoImpl(private val api: API) : AuthRepo, BaseRemoteDataSource() {
                         ErrorTypes.GeneralError(
                             errorMessage = ErrorMessage.DynamicString(
                                 it.data?.status?.statusMessage.orEmpty()
+                            )
+                        )
+                    )
+                }
+            }
+        }
+    }
+
+    override fun sendOtp(email: String) = safeApiCall {
+        api.sendOtp(email)
+    }.map {
+        when (it) {
+            is Resource.Error -> Resource.Error(it.errorTypes)
+            is Resource.Success -> {
+                if (it.data?.statusCode == 0) {
+                    Resource.Success(true)
+                } else {
+                    Resource.Error(
+                        ErrorTypes.GeneralError(
+                            errorMessage = ErrorMessage.DynamicString(
+                                it.data?.statusMessage.orEmpty()
+                            )
+                        )
+                    )
+                }
+            }
+        }
+    }
+
+    override fun confirmOtp(
+        email: String,
+        otp: String
+    ) = safeApiCall {
+        api.confirmOtp(email, otp)
+    }.map {
+        when (it) {
+            is Resource.Error -> Resource.Error(it.errorTypes)
+            is Resource.Success -> {
+                if (it.data?.statusCode == 0) {
+                    Resource.Success(true)
+                } else {
+                    Resource.Error(
+                        ErrorTypes.GeneralError(
+                            errorMessage = ErrorMessage.DynamicString(
+                                it.data?.statusMessage.orEmpty()
+                            )
+                        )
+                    )
+                }
+            }
+        }
+    }
+
+    override fun resetPass(
+        email: String,
+        newPass: String
+    ) = safeApiCall {
+        api.resetPass(email, newPass)
+    }.map {
+        when (it) {
+            is Resource.Error -> Resource.Error(it.errorTypes)
+            is Resource.Success -> {
+                if (it.data?.statusCode == 0) {
+                    Resource.Success(true)
+                } else {
+                    Resource.Error(
+                        ErrorTypes.GeneralError(
+                            errorMessage = ErrorMessage.DynamicString(
+                                it.data?.statusMessage.orEmpty()
                             )
                         )
                     )

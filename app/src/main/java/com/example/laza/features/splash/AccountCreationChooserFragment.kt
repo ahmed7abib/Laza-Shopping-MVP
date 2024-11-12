@@ -1,8 +1,7 @@
-package com.example.laza.features.accountCreationChooser
+package com.example.laza.features.splash
 
 import android.os.Bundle
 import android.view.View
-import androidx.navigation.fragment.findNavController
 import com.example.common.ui.BaseFragment
 import com.example.common.ui.BaseViewModel
 import com.example.laza.R
@@ -23,15 +22,15 @@ class AccountCreationChooserFragment :
 
     private fun onClick() {
         binding.loginBTN.setOnClickListener {
-            findNavController().navigate(R.id.action_accountCreationChooserFragment_to_loginFragment)
+            navigateTo(R.id.action_accountCreationChooserFragment_to_loginFragment)
         }
 
         binding.signUpBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_accountCreationChooserFragment_to_signUpFragment)
+            navigateTo(R.id.action_accountCreationChooserFragment_to_signUpFragment)
         }
 
         binding.buttonBack.setOnClickListener {
-            findNavController().popBackStack()
+            popBackStack()
         }
     }
 

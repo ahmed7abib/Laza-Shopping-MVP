@@ -1,4 +1,4 @@
-package com.example.laza.features.signup
+package com.example.laza.features.auth.signup
 
 import android.os.Bundle
 import android.view.View

@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountCreationChooserFragment"
-        android:name="com.example.laza.features.accountCreationChooser.AccountCreationChooserFragment"
+        android:name="com.example.laza.features.splash.AccountCreationChooserFragment"
         android:label="fragment_account_creation_chooser"
         tools:layout="@layout/fragment_account_creation_chooser">
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.laza.features.login.LoginFragment"
+        android:name="com.example.laza.features.auth.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -48,7 +48,7 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.laza.features.signup.SignUpFragment"
+        android:name="com.example.laza.features.auth.signup.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
         <action
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.laza.features.forgotPassword.ForgotPasswordFragment"
+        android:name="com.example.laza.features.auth.forgotPassword.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment"
         tools:layout="@layout/fragment_forgot_password">
         <action
@@ -68,7 +68,7 @@
     </fragment>
     <fragment
         android:id="@+id/confirmPasswordFragment"
-        android:name="com.example.laza.features.confirmPassword.ConfirmPasswordFragment"
+        android:name="com.example.laza.features.auth.confirmPassword.ConfirmPasswordFragment"
         android:label="fragment_confirm_password"
         tools:layout="@layout/fragment_confirm_password">
         <action
@@ -78,7 +78,7 @@
 
     <fragment
         android:id="@+id/changePasswordFragment"
-        android:name="com.example.laza.features.changePassword.ChangePasswordFragment"
+        android:name="com.example.laza.features.auth.changePassword.ChangePasswordFragment"
         android:label="fragment_change_password"
         tools:layout="@layout/fragment_change_password">
         <action

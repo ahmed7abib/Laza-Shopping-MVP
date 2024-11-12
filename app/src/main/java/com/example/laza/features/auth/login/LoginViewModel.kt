@@ -1,4 +1,4 @@
-package com.example.laza.features.login
+package com.example.laza.features.auth.login
 
 import androidx.lifecycle.viewModelScope
 import com.example.common.SingleMutableLiveData

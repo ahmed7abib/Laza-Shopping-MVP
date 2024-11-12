@@ -157,4 +157,8 @@
     <string name="username_and_password_empty">User name and password are required!</string>
     <string name="email_empty">Email is required!</string>
     <string name="username_and_password_and_email_empty">User name and email and password are reqired!</string>
+    <string name="invalid_email">Invalid email!</string>
+    <string name="invalid_otp">Invalid OTP!</string>
+    <string name="pass_new_pass_not_match">Password and new password are\'t matched!</string>
+    <string name="invalid_pass">Invalid password!</string>
 </resources>
