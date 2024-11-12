@@ -31,6 +31,7 @@ open class BaseRemoteDataSource {
 
     private fun <T : Any> getResultError(response: Response<T>?): Resource<T> {
         return when (response?.code()) {
+
             401 -> {
                 Resource.Error(ErrorTypes.AuthenticationError())
             }
@@ -38,8 +39,8 @@ open class BaseRemoteDataSource {
             in 402..499 -> {
                 val message: String = try {
                     val jObjError = JSONObject(response?.errorBody()?.string().orEmpty())
-                    jObjError.getString("message").orEmpty()
-                } catch (e: Exception) {
+                    jObjError.optString("exceptionMsg", "Error happened, try again.")
+                } catch (_: Exception) {
                     "Error happened, try again."
                 }
 

@@ -11,6 +11,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.common.gone
 import com.example.common.visible
+import com.example.data.local.shared_pref.SharedPreferenceHelper
 import com.example.laza.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -70,6 +71,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.cartId.setOnClickListener {
             navController.navigate(R.id.cartFragment)
+        }
+
+        binding.logout.setOnClickListener {
+            SharedPreferenceHelper.setRememberMe(false)
         }
     }
 
