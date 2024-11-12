@@ -19,7 +19,7 @@
         android:id="@+id/cartFragment"
         android:name="com.example.laza.features.cart.CartFragment"
         android:label="CartFragment"
-        tools:layout="@layout/fragment_cart" >
+        tools:layout="@layout/fragment_cart">
         <action
             android:id="@+id/action_cartFragment_to_orderConfirmedFragment"
             app:destination="@id/orderConfirmedFragment" />
@@ -99,7 +99,7 @@
         android:id="@+id/orderConfirmedFragment"
         android:name="com.example.laza.features.orderConfirmed.OrderConfirmedFragment"
         android:label="OrderConfirmedFragment"
-        tools:layout="@layout/fragment_order_confirmed" >
+        tools:layout="@layout/fragment_order_confirmed">
         <action
             android:id="@+id/action_orderConfirmedFragment_to_homeFragment"
             app:destination="@id/homeFragment" />

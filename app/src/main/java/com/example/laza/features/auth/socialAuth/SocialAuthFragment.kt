@@ -1,16 +1,16 @@
-package com.example.laza.features.splash
+package com.example.laza.features.auth.socialAuth
 
 import android.os.Bundle
 import android.view.View
 import com.example.common.ui.BaseFragment
 import com.example.common.ui.BaseViewModel
 import com.example.laza.R
-import com.example.laza.databinding.FragmentAccountCreationChooserBinding
+import com.example.laza.databinding.FragmentSocialAuthBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AccountCreationChooserFragment :
-    BaseFragment<FragmentAccountCreationChooserBinding>(FragmentAccountCreationChooserBinding::inflate) {
+class SocialAuthFragment :
+    BaseFragment<FragmentSocialAuthBinding>(FragmentSocialAuthBinding::inflate) {
 
     override val viewModel = BaseViewModel()
 
@@ -33,5 +33,4 @@ class AccountCreationChooserFragment :
             popBackStack()
         }
     }
-
 }

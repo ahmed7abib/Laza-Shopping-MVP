@@ -21,9 +21,9 @@
     </fragment>
     <fragment
         android:id="@+id/accountCreationChooserFragment"
-        android:name="com.example.laza.features.splash.AccountCreationChooserFragment"
-        android:label="fragment_account_creation_chooser"
-        tools:layout="@layout/fragment_account_creation_chooser">
+        android:name="com.example.laza.features.auth.socialAuth.SocialAuthFragment"
+        android:label="fragment_social_auth"
+        tools:layout="@layout/fragment_social_auth">
         <action
             android:id="@+id/action_accountCreationChooserFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
